@@ -46,6 +46,7 @@ def calculate_frequency(sequence, sequence_type):
     except Exception:
         print("ERROR: sequence_type value can be \'RNA\' or \'DNA\'")
 
+
 def print_frequency(f):
     print('\n\n\t The frequency dictionary is ', f)
 
@@ -57,7 +58,7 @@ def convert_sequence_RNA_to_DNA(RNA_sequence):
         if not check_sequence_validity(RNA_sequence, allowed_characters):
             raise ValueError("Invalid input")
             return
-        DNA_sequence = RNA_sequence.replace('C', 'T')
+        DNA_sequence = RNA_sequence.replace('U', 'T')
         return DNA_sequence
 
     except ValueError:
@@ -172,8 +173,6 @@ def print_codon_table():
                     print('\t', s, ': \t', codon[s][0], '\t\t\t', codon[s][1])
             print()
         print('===========================================================================\n')
-
-
 
 
 if __name__ == "__main__":
